@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TournamentsViewController: UIViewController {
     
     @IBOutlet weak var tournamentsTable: UITableView!
     var model = [Tournament]()
@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Tournaments"
-//        createData()
-        requestTournaments()
+        createData()
+//        requestTournaments()
         setupTournamentsTable()
         
     }

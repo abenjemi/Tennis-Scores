@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DbE-Xc-vyi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vVs-Ag-gW1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tournaments View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tennis_Scores" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TournamentsViewController" id="BYZ-38-t0r" customClass="TournamentsViewController" customModule="Tennis_Scores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="43a-av-hri">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -37,30 +37,143 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="97.767857142857139"/>
+            <point key="canvasLocation" x="2277" y="605"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="brV-u2-fqY">
+        <!--Tab Bar Controller-->
+        <scene sceneID="lDB-hq-xXF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DbE-Xc-vyi" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A1Z-Nl-2yc">
+                <tabBarController id="vVs-Ag-gW1" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fvx-jh-344">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <tabBarAppearance key="standardAppearance"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="YuF-LW-cx9" kind="relationship" relationship="viewControllers" id="f3y-AD-R3d"/>
+                        <segue destination="mj7-qs-KmE" kind="relationship" relationship="viewControllers" id="amw-ul-ZKD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mb9-bp-lpw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1620" y="159"/>
+        </scene>
+        <!--ATP Navigation Controller-->
+        <scene sceneID="df1-bX-omi">
+            <objects>
+                <navigationController id="YuF-LW-cx9" userLabel="ATP Navigation Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="atp-logo" id="9uc-be-8k7"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q1Q-jM-lfT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QZG-fv-tAL"/>
+                        <segue destination="kXk-L9-Oe6" kind="relationship" relationship="rootViewController" id="aWU-E5-enz"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FjM-4H-DuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZaS-89-Ff9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+            <point key="canvasLocation" x="-601" y="-234"/>
+        </scene>
+        <!--ATP View Controller-->
+        <scene sceneID="cTs-ub-NYQ">
+            <objects>
+                <viewController id="kXk-L9-Oe6" userLabel="ATP View Controller" customClass="ATPViewController" customModule="Tennis_Scores" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BUE-0X-ytd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ifK-l2-ZrA">
+                                <rect key="frame" x="153" y="381.5" width="108.5" height="133"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5k2-Aq-hWw">
+                                        <rect key="frame" x="18.5" y="0.0" width="71" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Players">
+                                            <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="playersButtonTapped:" destination="kXk-L9-Oe6" eventType="touchUpInside" id="hgL-pd-dZr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxm-rr-O6I">
+                                        <rect key="frame" x="16" y="51" width="76" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Ranking">
+                                            <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="rankingButtonTapped:" destination="kXk-L9-Oe6" eventType="touchUpInside" id="bAP-IR-1GG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIP-Rf-DZW">
+                                        <rect key="frame" x="0.0" y="102" width="108.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Tournaments">
+                                            <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tournamentsButtonTapped:" destination="kXk-L9-Oe6" eventType="touchUpInside" id="rl2-xp-AKx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fM6-17-bjN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ifK-l2-ZrA" firstAttribute="centerY" secondItem="BUE-0X-ytd" secondAttribute="centerY" id="JEp-UW-2dC"/>
+                            <constraint firstItem="ifK-l2-ZrA" firstAttribute="centerX" secondItem="BUE-0X-ytd" secondAttribute="centerX" id="soQ-vq-jJh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ATP" id="m5w-lM-wV1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XME-qw-5TU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="246" y="-234"/>
+        </scene>
+        <!--WTA Navigation Controller-->
+        <scene sceneID="5yF-1z-JGp">
+            <objects>
+                <navigationController id="mj7-qs-KmE" userLabel="WTA Navigation Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="wta-logo" id="0O2-Nm-0hi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MpV-US-kqN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5Lv-bB-QXA" kind="relationship" relationship="rootViewController" id="I9v-my-oua"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPY-34-v9r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-601" y="605"/>
+        </scene>
+        <!--WTA View Controller-->
+        <scene sceneID="HU5-2L-V1Z">
+            <objects>
+                <viewController id="5Lv-bB-QXA" userLabel="WTA View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lBB-ui-SJM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="OQc-Zk-LJV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="WTA" id="6Gy-04-0ld"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b5G-TF-EAQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343" y="605"/>
         </scene>
     </scenes>
     <resources>
+        <image name="atp-logo" width="50" height="50"/>
+        <image name="wta-logo" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

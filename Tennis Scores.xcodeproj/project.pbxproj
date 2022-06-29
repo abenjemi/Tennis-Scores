@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8313DCB52867D2BC001C9029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313DCB42867D2BC001C9029 /* AppDelegate.swift */; };
 		8313DCB72867D2BC001C9029 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313DCB62867D2BC001C9029 /* SceneDelegate.swift */; };
-		8313DCB92867D2BC001C9029 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313DCB82867D2BC001C9029 /* ViewController.swift */; };
+		8313DCB92867D2BC001C9029 /* TournamentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313DCB82867D2BC001C9029 /* TournamentsViewController.swift */; };
 		8313DCBC2867D2BC001C9029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8313DCBA2867D2BC001C9029 /* Main.storyboard */; };
 		8313DCBE2867D2C0001C9029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8313DCBD2867D2C0001C9029 /* Assets.xcassets */; };
 		8313DCC12867D2C0001C9029 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8313DCBF2867D2C0001C9029 /* LaunchScreen.storyboard */; };
@@ -21,6 +21,7 @@
 		8313DCEA2867D815001C9029 /* TournamentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8313DCE82867D815001C9029 /* TournamentsTableViewCell.xib */; };
 		8313DCEC2867E338001C9029 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313DCEB2867E338001C9029 /* Tournament.swift */; };
 		8313DCF02867EFE6001C9029 /* MyDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313DCEF2867EFE6001C9029 /* MyDateFormatter.swift */; };
+		83775BB9286A92EA00FEE395 /* ATPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83775BB8286A92EA00FEE395 /* ATPViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,7 @@
 		8313DCB12867D2BC001C9029 /* Tennis Scores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tennis Scores.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8313DCB42867D2BC001C9029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8313DCB62867D2BC001C9029 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8313DCB82867D2BC001C9029 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8313DCB82867D2BC001C9029 /* TournamentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsViewController.swift; sourceTree = "<group>"; };
 		8313DCBB2867D2BC001C9029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8313DCBD2867D2C0001C9029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8313DCC02867D2C0001C9029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		8313DCE82867D815001C9029 /* TournamentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TournamentsTableViewCell.xib; sourceTree = "<group>"; };
 		8313DCEB2867E338001C9029 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		8313DCEF2867EFE6001C9029 /* MyDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDateFormatter.swift; sourceTree = "<group>"; };
+		83775BB8286A92EA00FEE395 /* ATPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATPViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +114,7 @@
 				8313DCE62867D7C0001C9029 /* Tournaments Table Cell */,
 				8313DCB42867D2BC001C9029 /* AppDelegate.swift */,
 				8313DCB62867D2BC001C9029 /* SceneDelegate.swift */,
-				8313DCB82867D2BC001C9029 /* ViewController.swift */,
+				8313DCB82867D2BC001C9029 /* TournamentsViewController.swift */,
 				8313DCEF2867EFE6001C9029 /* MyDateFormatter.swift */,
 				8313DCE42867D5BB001C9029 /* TournamentsTableExtensions.swift */,
 				8313DCEB2867E338001C9029 /* Tournament.swift */,
@@ -120,6 +122,7 @@
 				8313DCBD2867D2C0001C9029 /* Assets.xcassets */,
 				8313DCBF2867D2C0001C9029 /* LaunchScreen.storyboard */,
 				8313DCC22867D2C0001C9029 /* Info.plist */,
+				83775BB8286A92EA00FEE395 /* ATPViewController.swift */,
 			);
 			path = "Tennis Scores";
 			sourceTree = "<group>";
@@ -282,12 +285,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8313DCB92867D2BC001C9029 /* ViewController.swift in Sources */,
+				8313DCB92867D2BC001C9029 /* TournamentsViewController.swift in Sources */,
 				8313DCEC2867E338001C9029 /* Tournament.swift in Sources */,
 				8313DCB52867D2BC001C9029 /* AppDelegate.swift in Sources */,
 				8313DCF02867EFE6001C9029 /* MyDateFormatter.swift in Sources */,
 				8313DCE92867D815001C9029 /* TournamentsTableViewCell.swift in Sources */,
 				8313DCE52867D5BB001C9029 /* TournamentsTableExtensions.swift in Sources */,
+				83775BB9286A92EA00FEE395 /* ATPViewController.swift in Sources */,
 				8313DCB72867D2BC001C9029 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
