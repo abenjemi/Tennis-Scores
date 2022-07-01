@@ -156,8 +156,49 @@
                     <view key="view" contentMode="scaleToFill" id="lBB-ui-SJM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tzy-bL-oQv">
+                                <rect key="frame" x="153" y="381.5" width="108.5" height="133"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dE-oj-k21">
+                                        <rect key="frame" x="18.5" y="0.0" width="71" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Players">
+                                            <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="playersButtonTapped:" destination="kXk-L9-Oe6" eventType="touchUpInside" id="0VC-sT-BzR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGb-3m-n7c">
+                                        <rect key="frame" x="16" y="51" width="76" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Ranking">
+                                            <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="rankingButtonTapped:" destination="kXk-L9-Oe6" eventType="touchUpInside" id="WJg-Bx-DVy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxF-i4-eVC">
+                                        <rect key="frame" x="0.0" y="102" width="108.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Tournaments">
+                                            <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tournamentsButtonTapped:" destination="kXk-L9-Oe6" eventType="touchUpInside" id="MXf-gc-NIF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OQc-Zk-LJV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tzy-bL-oQv" firstAttribute="centerY" secondItem="lBB-ui-SJM" secondAttribute="centerY" id="4IE-Ar-jKc"/>
+                            <constraint firstItem="Tzy-bL-oQv" firstAttribute="centerX" secondItem="lBB-ui-SJM" secondAttribute="centerX" id="gas-hQ-Laq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="WTA" id="6Gy-04-0ld"/>
                 </viewController>
@@ -174,6 +215,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

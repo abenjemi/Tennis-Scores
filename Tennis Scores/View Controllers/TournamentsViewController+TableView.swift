@@ -17,6 +17,4 @@ extension TournamentsViewController: UITableViewDelegate, UITableViewDataSource 
         cell.populateCell(with: model[indexPath.row])
         return cell
     }
-    
-    
 }

@@ -10,13 +10,22 @@ import UIKit
 class TournamentsViewController: UIViewController {
     
     @IBOutlet weak var tournamentsTable: UITableView!
-    var model = [Tournament]()
+    var model: [Tournament]
     let dateFormatter = MyDateFormatter()
+    
+    init(model: [Tournament]) {
+        self.model = model
+        super.init(nibName: "TournamentsViewController", bundle: Bundle(identifier: "com.aminebenjemia.Tennis-Scores"))
+    }
+    
+    required convenience init?(coder: NSCoder) {
+        self.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Tournaments"
-        createData()
+//        createData()
 //        requestTournaments()
         setupTournamentsTable()
         
