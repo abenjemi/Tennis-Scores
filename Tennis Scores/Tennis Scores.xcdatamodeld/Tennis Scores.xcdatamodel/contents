@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Tournament" representedClassName="Tournament" syncable="YES" codeGenerationType="category">
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="end_date" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="season" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="start_date" optional="YES" attributeType="String"/>
+        <attribute name="surface" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Tournament" positionX="-63" positionY="-18" width="128" height="164"/>
+    </elements>
+</model>

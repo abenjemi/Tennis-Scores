@@ -22,6 +22,8 @@
 		8313DCEC2867E338001C9029 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313DCEB2867E338001C9029 /* Tournament.swift */; };
 		8313DCF02867EFE6001C9029 /* MyDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313DCEF2867EFE6001C9029 /* MyDateFormatter.swift */; };
 		83775BB9286A92EA00FEE395 /* ATPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83775BB8286A92EA00FEE395 /* ATPViewController.swift */; };
+		8391EC0928722ABF003F52D4 /* WTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8391EC0828722ABF003F52D4 /* WTAViewController.swift */; };
+		8391EC0C28725B1B003F52D4 /* Tennis Scores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8391EC0A28725B1B003F52D4 /* Tennis Scores.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		8313DCEB2867E338001C9029 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		8313DCEF2867EFE6001C9029 /* MyDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDateFormatter.swift; sourceTree = "<group>"; };
 		83775BB8286A92EA00FEE395 /* ATPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATPViewController.swift; sourceTree = "<group>"; };
+		8391EC0828722ABF003F52D4 /* WTAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTAViewController.swift; sourceTree = "<group>"; };
+		8391EC0B28725B1B003F52D4 /* Tennis Scores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Tennis Scores.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				83FA73F3286E983C00FAB47D /* Models */,
 				83FA73F4286E985000FAB47D /* Views */,
 				83FA73F2286E980500FAB47D /* View Controllers */,
+				8391EC0A28725B1B003F52D4 /* Tennis Scores.xcdatamodeld */,
 			);
 			path = "Tennis Scores";
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				8313DCE42867D5BB001C9029 /* TournamentsViewController+TableView.swift */,
 				83775BB8286A92EA00FEE395 /* ATPViewController.swift */,
 				8313DCB82867D2BC001C9029 /* TournamentsViewController.swift */,
+				8391EC0828722ABF003F52D4 /* WTAViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -315,6 +321,8 @@
 				8313DCF02867EFE6001C9029 /* MyDateFormatter.swift in Sources */,
 				8313DCE92867D815001C9029 /* TournamentsTableViewCell.swift in Sources */,
 				8313DCE52867D5BB001C9029 /* TournamentsViewController+TableView.swift in Sources */,
+				8391EC0C28725B1B003F52D4 /* Tennis Scores.xcdatamodeld in Sources */,
+				8391EC0928722ABF003F52D4 /* WTAViewController.swift in Sources */,
 				83775BB9286A92EA00FEE395 /* ATPViewController.swift in Sources */,
 				8313DCB72867D2BC001C9029 /* SceneDelegate.swift in Sources */,
 			);
@@ -658,6 +666,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8391EC0A28725B1B003F52D4 /* Tennis Scores.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8391EC0B28725B1B003F52D4 /* Tennis Scores.xcdatamodel */,
+			);
+			currentVersion = 8391EC0B28725B1B003F52D4 /* Tennis Scores.xcdatamodel */;
+			path = "Tennis Scores.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8313DCA92867D2BC001C9029 /* Project object */;
 }
