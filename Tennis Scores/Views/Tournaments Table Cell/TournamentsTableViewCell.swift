@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TournamentsTableViewCell: UITableViewCell {
 
@@ -22,14 +23,14 @@ class TournamentsTableViewCell: UITableViewCell {
         return UINib(nibName: "TournamentsTableViewCell", bundle: nil)
     }
     
-    func populateCell(with tournament: Tournament) {
+    func populateCell(with tournament: NSManagedObject) {
         
-        cityLabel.text = tournament.city
-        countryLabel.text = tournament.country
+        cityLabel.text = tournament.value(forKey: "city") as? String
+        countryLabel.text = tournament.value(forKey: "country") as? String
 //        startDateLabel.text = dateFormatter.formatter.string(from: tournament.start_date)
 //        endDateLabel.text = dateFormatter.formatter.string(from: tournament.end_date)
-        startDateLabel.text = tournament.start_date
-        endDateLabel.text = tournament.end_date
+        startDateLabel.text = tournament.value(forKey: "start_date") as? String
+        endDateLabel.text = tournament.value(forKey: "end_date") as? String
     }
     
 }

@@ -23,7 +23,7 @@ class WTAViewController: UIViewController {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "TournamentsViewController") as? TournamentsViewController else {
             return
         }
-        vc.model = [Tournament(city: "La Jolla", country: "US", start_date: "2/2/20", end_date: "2/10/20")]
+//        vc.model = [Tournament(city: "La Jolla", country: "US", start_date: "2/2/20", end_date: "2/10/20")]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

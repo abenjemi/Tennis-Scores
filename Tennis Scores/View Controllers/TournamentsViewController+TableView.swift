@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 extension TournamentsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.count
+        return tournaments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TournamentsTableViewCell.identifier) as? TournamentsTableViewCell else { return UITableViewCell() }
-        cell.populateCell(with: model[indexPath.row])
+        cell.populateCell(with: tournaments[indexPath.row])
         return cell
     }
 }
