@@ -12,10 +12,16 @@ class TournamentsViewController: UIViewController {
     
 //    let isATP: Bool
     
-    let coreDataHandler = CoreDataHandler()
+    let coreDataHandler = CoreDataHandler.shared
+    let apiHandler = APIHandler.shared
+    let atpTournamentsURL = "https://tennis-live-data.p.rapidapi.com/tournaments/ATP/2020"
     
     @IBOutlet weak var tournamentsTable: UITableView!
-    var tournaments: [NSManagedObject] = []
+    var tournaments = [Tournament]() {
+        didSet {
+            self.tournamentsTable.reloadData()
+        }
+    }
     let dateFormatter = MyDateFormatter()
     
 //    init(tournaments: [Tournament]) {
@@ -30,16 +36,30 @@ class TournamentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Tournaments"
-//        fetchTournaments()
-        createData()
-//        requestTournaments()
-//        setupTournamentsTable()
+        fetchTournaments()
+        setupTournamentsTable()
         
     }
     
     func fetchTournaments() {
         // try to fetch data from database, if it's not there get it from the api
-        print("fetch tournaments")
+//        print("\n\n\n\n")
+//        let tournamentsCount: Int?
+        do {
+            let tournamentsCount = try coreDataHandler.managedContext.count(for: Tournament.fetchRequest())
+            if tournamentsCount > 0 {
+                if let fetchedTournaments = coreDataHandler.fetchObjects(fetchRequest: Tournament.fetchRequest()) {
+                    self.tournaments = fetchedTournaments
+                }
+            } else {
+                requestTournaments()
+                print("\n\nAAAAAAA\n\n")
+            }
+        } catch {
+            print("error fetching data: \(error)")
+        }
+//        print("fetch tournaments")
+        print(self.tournaments)
     }
     
     func setupTournamentsTable() {
@@ -55,6 +75,9 @@ class TournamentsViewController: UIViewController {
         guard let firstTournament = coreDataHandler.createObject(entityName: "Tournament") else { return }
         firstTournament.setValue("Tunisia", forKey: "country")
         firstTournament.setValue("Tunis", forKey: "city")
+        guard let secondTournament = coreDataHandler.createObject(entityName: "Tournament") else { return }
+        secondTournament.setValue("USA", forKey: "country")
+        secondTournament.setValue("La Jolla", forKey: "city")
 //        tournaments.append(firstTournament)
         coreDataHandler.save()
         
@@ -65,43 +88,24 @@ class TournamentsViewController: UIViewController {
 //        tournaments.append(Tournament(city: "Madrid", country: "Spain", start_date: "2020-12-01", end_date: "2020-12-08"))
     }
     
-//    func requestTournaments() {
-//        let headers = [
-//            "X-RapidAPI-Key": "c38f15efa6mshac563c3f3e7c18bp1edf1ajsnc57dec6ddb1c",
-//            "X-RapidAPI-Host": "tennis-live-data.p.rapidapi.com"
-//        ]
-//
-//        let request = NSMutableURLRequest(url: NSURL(string: "https://tennis-live-data.p.rapidapi.com/tournaments/ATP/2020")! as URL,
-//                                                cachePolicy: .useProtocolCachePolicy,
-//                                            timeoutInterval: 10.0)
-//        request.httpMethod = "GET"
-//        request.allHTTPHeaderFields = headers
-//
-//        let session = URLSession.shared
-//        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-//            guard let data = data, error == nil else {
-//                print("\nSomething is wrong\n")
-//                return
-//            }
-//
-//            var json: Tournaments?
-//            do {
-//                json = try JSONDecoder().decode(Tournaments.self, from: data)
-//            } catch {
-//                print("error: \(error)")
-//                return
-//            }
-//
-//            guard let result = json else { return }
-//            self.tournaments.append(contentsOf: result.results)
-//            DispatchQueue.main.async {
-//                self.tournamentsTable.reloadData()
-//            }
-//
-//        })
-//        dataTask.resume()
-//    }
-
-
+    func requestTournaments() {
+        let url = atpTournamentsURL
+        apiHandler.requestData(url) { (result) in
+            switch(result) {
+            case .success(let data):
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
+                        print("\n\n\n\nTTTTTTT\n\n\n\n")
+                        print(json)
+                    }
+                } catch let error as NSError {
+                    print(error)
+                }
+            case .failure(let error):
+                print(error)
+            }
+            print(result)
+        }
+    }
 }
 

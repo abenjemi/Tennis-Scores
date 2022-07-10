@@ -10,6 +10,9 @@ import UIKit
 import CoreData
 
 class CoreDataHandler {
+    private init() {}
+    static let shared = CoreDataHandler()
+    
     let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func createObject(entityName: String) -> NSManagedObject? {
@@ -18,13 +21,16 @@ class CoreDataHandler {
         return managedObject
     }
     
-//    func fetchObjects(managedObject: NSManagedObject) -> [NSManagedObject] {
-//        do {
-//            let fetchedObjects = try managedContext.fetch(managedObject.fetchRequest())
-//        } catch let error as NSError {
-//            print("Could not fetch. \(error), \(error.userInfo)")
-//        }
-//    }
+    func fetchObjects<T: NSManagedObject>(fetchRequest: NSFetchRequest<T>) -> [T]? {
+        let fetchedObjects: [T]?
+        do {
+            fetchedObjects = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return nil
+        }
+        return fetchedObjects
+    }
     
     func save() {
         do {

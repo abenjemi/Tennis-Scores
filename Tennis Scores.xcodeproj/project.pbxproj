@@ -20,6 +20,7 @@
 		8313DCE92867D815001C9029 /* TournamentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313DCE72867D815001C9029 /* TournamentsTableViewCell.swift */; };
 		8313DCEA2867D815001C9029 /* TournamentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8313DCE82867D815001C9029 /* TournamentsTableViewCell.xib */; };
 		8313DCF02867EFE6001C9029 /* MyDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313DCEF2867EFE6001C9029 /* MyDateFormatter.swift */; };
+		832F3F40287B426D00B9C280 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832F3F3F287B426D00B9C280 /* APIHandler.swift */; };
 		83775BB9286A92EA00FEE395 /* ATPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83775BB8286A92EA00FEE395 /* ATPViewController.swift */; };
 		8391EC0928722ABF003F52D4 /* WTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8391EC0828722ABF003F52D4 /* WTAViewController.swift */; };
 		8391EC0C28725B1B003F52D4 /* Tennis Scores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8391EC0A28725B1B003F52D4 /* Tennis Scores.xcdatamodeld */; };
@@ -61,6 +62,7 @@
 		8313DCE72867D815001C9029 /* TournamentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsTableViewCell.swift; sourceTree = "<group>"; };
 		8313DCE82867D815001C9029 /* TournamentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TournamentsTableViewCell.xib; sourceTree = "<group>"; };
 		8313DCEF2867EFE6001C9029 /* MyDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDateFormatter.swift; sourceTree = "<group>"; };
+		832F3F3F287B426D00B9C280 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		83775BB8286A92EA00FEE395 /* ATPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATPViewController.swift; sourceTree = "<group>"; };
 		8391EC0828722ABF003F52D4 /* WTAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTAViewController.swift; sourceTree = "<group>"; };
 		8391EC0B28725B1B003F52D4 /* Tennis Scores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Tennis Scores.xcdatamodel"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				83FA73F2286E980500FAB47D /* View Controllers */,
 				8391EC0A28725B1B003F52D4 /* Tennis Scores.xcdatamodeld */,
 				83B800DE2877B47C00466324 /* CoreDataHandler.swift */,
+				832F3F3F287B426D00B9C280 /* APIHandler.swift */,
 			);
 			path = "Tennis Scores";
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				83B800DF2877B47C00466324 /* CoreDataHandler.swift in Sources */,
 				8313DCB52867D2BC001C9029 /* AppDelegate.swift in Sources */,
 				8313DCF02867EFE6001C9029 /* MyDateFormatter.swift in Sources */,
+				832F3F40287B426D00B9C280 /* APIHandler.swift in Sources */,
 				8313DCE92867D815001C9029 /* TournamentsTableViewCell.swift in Sources */,
 				8313DCE52867D5BB001C9029 /* TournamentsViewController+TableView.swift in Sources */,
 				8391EC0C28725B1B003F52D4 /* Tennis Scores.xcdatamodeld in Sources */,

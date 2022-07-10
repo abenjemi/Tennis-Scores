@@ -23,7 +23,7 @@ class TournamentsTableViewCell: UITableViewCell {
         return UINib(nibName: "TournamentsTableViewCell", bundle: nil)
     }
     
-    func populateCell(with tournament: NSManagedObject) {
+    func populateCell(with tournament: Tournament) {
         
         cityLabel.text = tournament.value(forKey: "city") as? String
         countryLabel.text = tournament.value(forKey: "country") as? String
@@ -32,5 +32,4 @@ class TournamentsTableViewCell: UITableViewCell {
         startDateLabel.text = tournament.value(forKey: "start_date") as? String
         endDateLabel.text = tournament.value(forKey: "end_date") as? String
     }
-    
 }
