@@ -38,7 +38,6 @@ class TournamentsViewController: UIViewController {
         title = "Tournaments"
         fetchTournaments()
         setupTournamentsTable()
-        
     }
     
     func fetchTournaments() {
@@ -93,11 +92,11 @@ class TournamentsViewController: UIViewController {
         apiHandler.requestData(url) { (result) in
             switch(result) {
             case .success(let data):
+                print(data)
                 do {
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
-                        print("\n\n\n\nTTTTTTT\n\n\n\n")
-                        print(json)
-                    }
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                    print("\n\n\n\nTTTTTTT\n\n\n\n")
+                    print((json ?? [:]) as [String: Any])
                 } catch let error as NSError {
                     print(error)
                 }
