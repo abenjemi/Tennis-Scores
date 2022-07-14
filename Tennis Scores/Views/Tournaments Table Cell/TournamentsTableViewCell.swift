@@ -27,8 +27,6 @@ class TournamentsTableViewCell: UITableViewCell {
         
         cityLabel.text = tournament.value(forKey: "city") as? String
         countryLabel.text = tournament.value(forKey: "country") as? String
-//        startDateLabel.text = dateFormatter.formatter.string(from: tournament.start_date)
-//        endDateLabel.text = dateFormatter.formatter.string(from: tournament.end_date)
         startDateLabel.text = tournament.value(forKey: "start_date") as? String
         endDateLabel.text = tournament.value(forKey: "end_date") as? String
     }

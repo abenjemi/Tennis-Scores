@@ -42,8 +42,6 @@ class TournamentsViewController: UIViewController {
     
     func fetchTournaments() {
         // try to fetch data from database, if it's not there get it from the api
-//        print("\n\n\n\n")
-//        let tournamentsCount: Int?
         do {
             let tournamentsCount = try coreDataHandler.managedContext.count(for: Tournament.fetchRequest())
             if tournamentsCount > 0 {
@@ -52,13 +50,10 @@ class TournamentsViewController: UIViewController {
                 }
             } else {
                 requestTournaments()
-                print("\n\nAAAAAAA\n\n")
             }
         } catch {
             print("error fetching data: \(error)")
         }
-//        print("fetch tournaments")
-        print(self.tournaments)
     }
     
     func setupTournamentsTable() {
@@ -77,14 +72,7 @@ class TournamentsViewController: UIViewController {
         guard let secondTournament = coreDataHandler.createObject(entityName: "Tournament") else { return }
         secondTournament.setValue("USA", forKey: "country")
         secondTournament.setValue("La Jolla", forKey: "city")
-//        tournaments.append(firstTournament)
         coreDataHandler.save()
-        
-        
-        
-        
-//        tournaments.append(Tournament(city: "Tunis", country: "Tunisia", start_date: "2020-10-08", end_date: "2020-10-15"))
-//        tournaments.append(Tournament(city: "Madrid", country: "Spain", start_date: "2020-12-01", end_date: "2020-12-08"))
     }
     
     func requestTournaments() {
@@ -94,17 +82,51 @@ class TournamentsViewController: UIViewController {
             case .success(let data):
                 print(data)
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                    print("\n\n\n\nTTTTTTT\n\n\n\n")
-                    print((json ?? [:]) as [String: Any])
+                    guard
+                        let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                        let results = json["results"] as? [[String: Any]]
+                        else { return }
+                    let tournaments: [Tournament]? = results.compactMap { result in
+                        guard
+                            // storing tournament attributes
+                            let city = result["city"] as? String,
+                            let code = result["city"] as? String,
+                            let country = result["country"] as? String,
+                            let country_code = result["country_code"] as? String,
+                            let end_date = result["end_date"] as? String,
+                            let id = result["id"] as? Int,
+                            let name = result["name"] as? String,
+                            let season = result["season"] as? Int,
+                            let start_date = result["start_date"] as? String,
+                            let surface = result["surface"] as? String
+                        else { return nil }
+                        
+                        // creating a tournament
+                        let tournament = Tournament(context: self.coreDataHandler.managedContext)
+                        tournament.city = city
+                        tournament.code = code
+                        tournament.country = country
+                        tournament.country_code = country_code
+                        tournament.end_date = end_date
+                        tournament.id = Int64(id)
+                        tournament.name = name
+                        tournament.season = Int64(season)
+                        tournament.start_date = start_date
+                        tournament.surface = surface
+                        
+                        return tournament
+                    }
+                    self.coreDataHandler.save()
                 } catch let error as NSError {
                     print(error)
                 }
             case .failure(let error):
                 print(error)
             }
-            print(result)
         }
     }
 }
+
+
+
 
